@@ -1,5 +1,6 @@
 module Test.Assert where
 
+import Data.Validity
 import GHC.Stack
 
 assert :: (HasCallStack, IsAssertion v) => v -> a -> a
@@ -22,3 +23,8 @@ class IsAssertion v where
 instance IsAssertion Bool where
   checkAssertion True = Passed
   checkAssertion False = Failed "boolean test"
+
+instance IsAssertion Validation where
+  checkAssertion v = case prettyValidation v of
+    Nothing -> Passed
+    Just msg -> Failed msg

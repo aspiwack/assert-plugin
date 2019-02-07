@@ -50,9 +50,9 @@ substituteAssert guts = do
 ---------------------------------------------
 
 assertModule :: Module
-assertModule = mkModule (stringToUnitId "assert-plugin-0.1.0-LAgxHDSWZB2eRC5GYzipb") (mkModuleName "Test.Assert")
+assertModule = mkModule (stringToUnitId "assert-plugin-0.1.0-MDx86hLmpiH70BRwCmdXN") (mkModuleName "Test.Assert")
 -- discovered with
--- >>> trace (showSDocUnsafe $ ppr (map (\(Module u _) -> installedUnitIdFS (toInstalledUnitId u)) (moduleEnvKeys names))
+-- >>> trace (showSDocUnsafe $ ppr (map (\(Module u _) -> installedUnitIdFS (toInstalledUnitId u)) (moduleEnvKeys names)))
 
 assertOccName :: OccName
 assertOccName = mkVarOcc "assert"
